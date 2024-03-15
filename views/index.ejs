@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <form action="/save" method="post" enctype="multipart/form-data">
+        id:<input type="number" name="id"> <br>
+        name:<input type="text" name="name"> <br>
+        amont:<input type="number" name="amount"> <br>
+        image:<input type="file" name="image"> <br>
+        <%=error %> <br>
+        <input type="submit" value="save">
+    </form>
+
+
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>amount</th>
+            <th>image</th>
+            <th>delete</th>
+        </tr>
+        <% data.forEach(item=>{ %>
+        <tr>
+            <td><%=item.id%></td>
+            <td><%=item.name%></td>
+            <td><%=item.amount%></td>
+            <td >
+                <img height="50" src=<%=item.image%> alt="">
+            </td>  
+            <td><a href="/delete/<%=item.id%>" >delete</a></td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+
+</html>

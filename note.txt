@@ -1,0 +1,9 @@
+npm init
+
+npm i aws-sdk dotenv ejs express multer nodemon
+
+"start": "nodemon index.js",
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`)
+})
